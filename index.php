@@ -1,16 +1,8 @@
-<!DOCTYPE html>
-<html <? language_attributes(); ?>>
-<head>
-	<meta charset="<? bloginfo( 'charset' ); ?>">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<? wp_head(); ?>
-</head>
+<? require("layout/head.php") ?>
 
-<body <? body_class(); ?>>
-	<? get_header(); ?>
+<div class="container">
+	<h2 class="page-title"><? the_title() ?></h2>
 	
-	<h2>Hello world</h2>
+</div>
 	
-	<? wp_footer(); ?>
-</body>
-</html>
+<? require("layout/footer.php") ?>

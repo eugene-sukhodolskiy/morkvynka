@@ -1,2 +1,2 @@
-
+a.no-style,a.no-style:focus,a.no-style:visited{text-decoration:none;color:inherit}.page-title{margin:18px 0}.product{background-color:#fff;transition-duration:.2s;transition-property:box-shadow}.product:hover{box-shadow:0 0 2px 5px rgba(0,0,0,.05)}.product .product-thumb{width:100%;object-fit:cover}.product .card-title a.title-link:hover{text-decoration:underline}.product .product-card-footer{display:flex;flex-direction:row;justify-content:space-between;align-items:center}.product .product-card-footer .price{font-weight:400;font-size:1.2em}.products{display:grid;grid-template-columns:1fr 1fr 1fr;gap:15px}
 /*# sourceMappingURL=all.min.css.map */
