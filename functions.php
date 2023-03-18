@@ -1,5 +1,6 @@
 <?php
 
+require_once("logic/utils.php");
 require_once("logic/classes/WP_Bootstrap_Navwalker.php");
 
 function my_theme_enqueue_styles() {

@@ -18,12 +18,11 @@
             'terms' => $category_id,
 	        ),
 		    ),
-		    'posts_per_page' => 12,
+		    'posts_per_page' => get_option('posts_per_page'),
 		    'orderby'        => 'date',
 		    'order'          => 'DESC'
 			);
-    	require_once "page-products.php";
-    	
+    	require_once "page-products.php";		
     }
 	} else {
 		echo "PAGE";

@@ -1,5 +1,7 @@
 <?
+	$query_args["paged"] = max( 1, get_query_var( 'paged' ) );
 	$products = new WP_Query( $query_args );
+	$query_result = $products;
 ?>
 <? if ( $products->have_posts() ) : ?>
   <div class="products">
@@ -9,3 +11,5 @@
   </div>
   <? wp_reset_postdata(); ?>
 <? endif; ?>
+
+<? require("paginator.php") ?>
