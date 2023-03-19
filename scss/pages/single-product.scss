@@ -1,0 +1,32 @@
+.single-product {
+	.product-price-group {
+		display: flex;
+		flex-direction: row;
+		align-items: center;
+		gap: 30px;
+
+		.price {
+			font-size: 1.3em;
+		}
+	}
+
+	.product-description {
+		margin-top: 80px;
+		display: flex;
+		flex-direction: column;
+		gap: 18px;
+
+		.product-title {
+			font-weight: normal;
+		}
+
+		.product-about {
+			font-size: 1.1em;
+    	line-height: 1.7em;
+		}
+	}
+	
+	.cat {
+		text-decoration: underline;
+	}
+}

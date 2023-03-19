@@ -25,6 +25,6 @@
     	require_once "page-products.php";		
     }
 	} else {
-		echo "PAGE";
+		require_once "single.php";
 	}
 ?>

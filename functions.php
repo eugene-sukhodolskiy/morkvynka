@@ -45,20 +45,58 @@ function my_theme_enqueue_styles() {
 function my_theme_scripts() {
 		wp_register_script( 'bootstrap', get_template_directory_uri() . '/bootstrap/bootstrap.min.js', array("jquery"), '1.0.0', true );
 		wp_register_script( 'bootstrap-bundle', get_template_directory_uri() . '/bootstrap/bootstrap.bundle.min.js', array("bootstrap"), '1.0.0', true );
-		// wp_register_script( 'bootstrap-esm', get_template_directory_uri() . '/js/bootstrap.esm.min.js', array("bootstrap-bundle"), '1.0.0', true );
 		wp_register_script( 'main', get_template_directory_uri() . '/js/dist/all.min.js', array('bootstrap-bundle'), '1.0.0', true );
 
 		wp_enqueue_script( 'bootstrap' );
 		wp_enqueue_script( 'bootstrap-bundle' );
-		// wp_enqueue_script( 'bootstrap-esm' );
 		wp_enqueue_script( 'main' );
 }
 
 add_action( 'wp_enqueue_scripts', 'my_theme_enqueue_styles' );
 add_action( 'wp_enqueue_scripts', 'my_theme_scripts' );
 
-// Регистрируем меню
 function register_my_menu() {
 	register_nav_menu('primary', __('Primary Menu', 'bootstrap5wptheme'));
 }
 add_action('after_setup_theme', 'register_my_menu');
+
+function mytheme_add_settings_section() {
+	add_settings_section(
+		'mytheme_section',
+		'Настройки телефона',
+		'mytheme_section_callback',
+		'general'
+	);
+}
+
+add_action( 'admin_init', 'mytheme_add_settings_section' );
+
+function mytheme_section_callback() {
+	echo '<p>Введите номер телефона:</p>';
+}
+
+function mytheme_add_settings_field() {
+	add_settings_field(
+		'mytheme_phone_number',
+		'Номер телефона',
+		'mytheme_phone_number_callback',
+		'general',
+		'mytheme_section'
+	);
+}
+
+add_action( 'admin_init', 'mytheme_add_settings_field' );
+
+function mytheme_phone_number_callback() {
+	$value = get_option( 'mytheme_phone_number' );
+	echo '<input type="text" name="mytheme_phone_number" value="' . esc_attr( $value ) . '" />';
+}
+
+function mytheme_register_settings() {
+	register_setting(
+		'general',
+		'mytheme_phone_number'
+	);
+}
+
+add_action( 'admin_init', 'mytheme_register_settings' );

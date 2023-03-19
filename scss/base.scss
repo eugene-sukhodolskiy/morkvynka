@@ -10,9 +10,38 @@ a.no-style:focus {
 }
 
 .page-title {
-	margin: 18px 0;
+	margin-bottom: 18px;
 }
 
 .paginator {
 	margin-top: 18px;
+}
+
+.navbar-nav {
+	align-items: center;
+
+	a.nav-link {
+		.mdi {
+			font-size: 26px;
+		}
+	}
+}
+
+.content {
+	.wp-block-image {
+		display: flex;
+		justify-content: center;
+		
+		img {
+			max-height: 500px;
+			width: auto;
+			margin: 20px auto;
+		}
+	}
+}
+
+.page-container {
+	padding-bottom: 80px;
+	padding-top: 18px;
+	min-height: calc(100vh - 175px);
 }

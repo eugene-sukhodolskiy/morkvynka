@@ -20,6 +20,9 @@ function print_structure($data, $indent = 0) {
 		}
 	} else {
 		$type = gettype($data);
+		if($type == "boolean"){
+			$data = $data ? "true" : "false";
+		}
 		echo "<span class='dd-type'>{$type}</span> <span class='dd-val'>{{$data}}</span><br>";
 	}
 }

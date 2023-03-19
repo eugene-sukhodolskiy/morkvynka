@@ -5,6 +5,7 @@
 			<span class="navbar-toggler-icon"></span>
 		</button>
 		<?
+			ob_start();
 			wp_nav_menu(array(
 				'menu' => 'primary',
 				'theme_location' => 'primary',
@@ -16,6 +17,12 @@
 				'fallback_cb' => 'WP_Bootstrap_Navwalker::fallback',
 				'walker' => new WP_Bootstrap_Navwalker(),
 			));
+			
+			$nav = ob_get_clean();
+
+			$nav = str_replace(">mdi-insta<", '><span class="mdi mdi-instagram"></span><', $nav);
+			$nav = str_replace(">mdi-email<", '><span class="mdi mdi-email-outline"></span><', $nav);
+			echo $nav;
 		?>
 	</div>
 </nav>
