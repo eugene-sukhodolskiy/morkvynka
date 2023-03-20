@@ -23,8 +23,8 @@
 			
 			$nav = ob_get_clean();
 
-			$nav = str_replace(">mdi-insta<", '><span class="mdi mdi-instagram"></span><', $nav);
-			$nav = str_replace(">mdi-email<", '><span class="mdi mdi-email-outline"></span><', $nav);
+			$nav = str_replace(">mdi-insta<", '><span class="mdi mdi-instagram"></span><span class="t"> Instagram</span><', $nav);
+			$nav = str_replace(">mdi-email<", '><span class="mdi mdi-email-outline"></span><span class="t"> Пошта</span><', $nav);
 			echo $nav;
 		?>
 	</div>

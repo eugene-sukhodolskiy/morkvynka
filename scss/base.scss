@@ -29,7 +29,24 @@ a.no-style:focus {
 	}
 }
 
-@media (max-width: 768px) {
+.navbar {
+	.navbar-toggler {
+		border: 0;
+		box-shadow: none !important;
+	}
+
+	.nav-item {
+		&.dropdown {
+			text-align: center;
+		}
+
+		.t {
+			display: none;
+		}
+	}
+}
+
+@media (max-width: 992px) {
 	.navbar-brand {
     font-size: 1.3em;
     padding-left: 64px;
@@ -38,6 +55,32 @@ a.no-style:focus {
 			height: 26px;
     	top: 7px;    	
     }
+	}
+
+	#wp-admin-bar-my-account {
+		display: none;
+	}
+
+	.navbar {
+		.navbar-nav {
+			align-items: start;
+		}
+
+		.nav-item {
+			&.dropdown {
+				text-align: left;
+				width: 100%;
+
+				.dropdown-menu {
+					width: 100%;
+					display: block;			
+				}
+			}
+
+			.t {
+				display: inline;
+			}
+		}
 	}
 }
 
@@ -48,6 +91,10 @@ a.no-style:focus {
 		.nav-link {
 			transition-duration: .15s;
 			transition-property: color; 
+
+			display: inline-flex;
+	    align-items: center;
+	    gap: 5px;
 			
 			&:hover {
 				color: #fdab24;
