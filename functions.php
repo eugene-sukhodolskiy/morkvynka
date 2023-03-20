@@ -111,3 +111,12 @@ function in_cart($product_id) {
 
 	return false;
 }
+
+function mytheme_product_tag_template( $template, $template_name, $template_path ) {
+  if ( 'taxonomy-product_tag.php' == $template_name ) {
+    $template = get_stylesheet_directory() . '/taxonomy-product_tag.php';
+  }
+  return $template;
+}
+
+add_filter( 'woocommerce_locate_template', 'mytheme_product_tag_template', 10, 3 );

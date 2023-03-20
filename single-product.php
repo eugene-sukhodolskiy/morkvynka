@@ -54,6 +54,21 @@
 					</div>
 				<? endif ?>
 
+				<?
+					$tag_terms = get_terms( [
+				    'taxonomy' => 'product_tag',
+				    'include'  => $product -> get_tag_ids()
+					] );
+				?>
+				<? if($tag_terms and count($tag_terms)): ?>
+					<div class="tags">
+						<? foreach($tag_terms as $i => $tag): ?>
+							<span class="mdi mdi-tag-outline"></span>
+							<a href="<?= get_term_link( $tag ) ?>" class="no-style tag"><?= $tag -> name ?></a> &nbsp;
+						<? endforeach ?>
+					</div>
+				<? endif ?>
+
 				<div class="product-price-group">
 					<div class="price">
 						<span class="cost"><?= $product -> get_price() ?></span>

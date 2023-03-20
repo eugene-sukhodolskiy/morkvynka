@@ -17,6 +17,8 @@ document.addEventListener("DOMContentLoaded", e => {
 		e => document.querySelectorAll(".dropdown-menu.show").forEach(i => i.classList.remove("show"))
 	);
 
+	document.querySelectorAll(`[data-toggle="dropdown"]`).forEach(i => i.addEventListener("click", e => e.preventDefault()))
+
 	jQuery('.add-to-cart').click(function(e) {
     e.preventDefault();
     var product_id = jQuery(this).data('product_id');
