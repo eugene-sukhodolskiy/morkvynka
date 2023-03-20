@@ -44,11 +44,11 @@ function my_theme_enqueue_styles() {
 
 function my_theme_scripts() {
 		wp_register_script( 'bootstrap', get_template_directory_uri() . '/bootstrap/bootstrap.min.js', array("jquery"), '1.0.0', true );
-		wp_register_script( 'bootstrap-bundle', get_template_directory_uri() . '/bootstrap/bootstrap.bundle.min.js', array("bootstrap"), '1.0.0', true );
-		wp_register_script( 'main', get_template_directory_uri() . '/js/dist/all.min.js', array('bootstrap-bundle'), '1.0.0', true );
+		// wp_register_script( 'bootstrap-bundle', get_template_directory_uri() . '/bootstrap/bootstrap.bundle.min.js', array("bootstrap"), '1.0.0', true );
+		wp_register_script( 'main', get_template_directory_uri() . '/js/dist/all.min.js', array('bootstrap'), '1.0.0', true );
 
 		wp_enqueue_script( 'bootstrap' );
-		wp_enqueue_script( 'bootstrap-bundle' );
+		// wp_enqueue_script( 'bootstrap-bundle' );
 		wp_enqueue_script( 'main' );
 }
 
@@ -100,3 +100,14 @@ function mytheme_register_settings() {
 }
 
 add_action( 'admin_init', 'mytheme_register_settings' );
+
+function in_cart($product_id) {
+	$cart_contents = WC()->cart->get_cart_contents();
+	foreach ($cart_contents as $cart_item) {
+    if($cart_item['data'] -> get_id() == $product_id) {
+    	return true;
+    }
+	}
+
+	return false;
+}

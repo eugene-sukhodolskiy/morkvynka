@@ -1,3 +1,8 @@
+@font-face {
+	font-family: "DXLBaB";
+	src: url("/wp-content/themes/morkvynka/fonts/DXLBaB-KSCpc-EUC-H.ttf");
+}
+
 :root {
   --bs-primary: #fdab24;
 }
@@ -7,6 +12,36 @@ a.no-style:visited,
 a.no-style:focus {
   text-decoration: none;
   color: inherit;
+}
+
+.navbar-brand {
+	font-family: "DXLBaB", sans-serif;
+  font-size: 1.7em;
+  font-weight: 400;
+  padding-left: 85px;
+  position: relative;
+	
+	.logo-img {
+    height: 34px;
+    top: 9px;
+	  position: absolute;
+	  left: 0px;
+	}
+}
+
+.top-navbar {
+	border-bottom: 2px solid rgb(251 154 0 / 56%);
+
+	.navbar-nav {
+		.nav-link {
+			transition-duration: .15s;
+			transition-property: color; 
+			
+			&:hover {
+				color: #fdab24;
+			}
+		}
+	}
 }
 
 .page-title {
@@ -44,4 +79,24 @@ a.no-style:focus {
 	padding-bottom: 80px;
 	padding-top: 18px;
 	min-height: calc(100vh - 175px);
+}
+
+.add-to-cart {
+	.not-already-state {
+		display: inline-block;
+	}
+
+	.already-state {
+		display: none;
+	}
+
+	&.already {
+		.not-already-state {
+			display: none;
+		}
+
+		.already-state {
+			display: inline-block;
+		}		
+	}
 }

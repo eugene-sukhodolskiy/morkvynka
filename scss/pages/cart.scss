@@ -1,0 +1,38 @@
+.woocommerce-page {
+	.cart {
+		.actions {
+			display: none;
+		}
+	}
+
+	.cart_totals .wc-proceed-to-checkout .checkout-button,
+	#payment #place_order{
+		transition-duration: .15s;
+		transition-property: color, background-color;
+		background-color: #fdab24;
+		border: 2px solid #fdab24;
+		box-sizing: border-box;
+
+		&:hover {
+			background-color: transparent;
+			color: #fdab24;
+		}
+	}
+
+	.woocommerce a.remove {
+		transition-duration: .15s;
+		transition-property: color, background-color;
+	}
+
+	.wp-element-button[name="update_cart"] {
+		display: none;
+	}
+}
+
+.woocommerce form .form-row input.input-text, 
+.woocommerce form .form-row textarea,
+.woocommerce form .form-row select {
+  border: 1px solid #aaa;
+  padding: 5px;
+  border-radius: 5px;
+}

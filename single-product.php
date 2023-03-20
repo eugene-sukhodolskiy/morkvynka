@@ -1,9 +1,8 @@
 <? require("layout/head.php") ?>
-
 <? $product = @get_product(); ?>
 <div class="container page-container">
 	<div class="row">
-		<div class="col-7">
+		<div class="col-lg-7 col-12">
 			<!-- Carousel -->
 			<? $gallery = @get_product() -> get_gallery_image_ids(); ?>
 
@@ -39,7 +38,7 @@
 			</div>
 
 		</div>
-		<div class="col-5">
+		<div class="col-lg-5 col-12">
 			<!-- Product description -->
 
 			<div class="product-description">
@@ -60,10 +59,22 @@
 						<span class="cost"><?= $product -> get_price() ?></span>
 						<span class="currency"><?= get_woocommerce_currency_symbol() ?></span>
 					</div>
-					<a href="#" class="btn btn-primary">
-						<span class="mdi mdi-cart-plus"></span>
-						В корзину
+					
+					<a 
+						href="<?php echo esc_url( get_permalink( $product -> get_id() ) ); ?>" 
+						class="btn btn-outline-primary add-to-cart <? if(in_cart($product -> get_id())): ?>already<? endif ?>" 
+						data-product_id="<?php echo esc_attr( $product -> get_id() ); ?>"
+					>
+						<div class="not-already-state">
+							<span class="mdi mdi-cart-plus"></span>
+							В корзину
+						</div>
+						<div class="already-state">
+							<span class="mdi mdi-check"></span>
+							Добавлено
+						</div>
 					</a>
+
 				</div>
 				<div class="product-about">
 					<?= $product -> get_description() ?>					
