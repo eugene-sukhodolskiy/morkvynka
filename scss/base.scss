@@ -23,14 +23,26 @@ a.no-style:focus {
 	
 	.logo-img {
     height: 34px;
-    top: 9px;
+    top: 7px;
 	  position: absolute;
 	  left: 0px;
 	}
 }
 
+@media (max-width: 768px) {
+	.navbar-brand {
+    font-size: 1.3em;
+    padding-left: 64px;
+
+    .logo-img {
+			height: 26px;
+    	top: 7px;    	
+    }
+	}
+}
+
 .top-navbar {
-	border-bottom: 2px solid rgb(251 154 0 / 56%);
+	border-bottom: 2px solid rgb(251 154 0 / 25%);
 
 	.navbar-nav {
 		.nav-link {
