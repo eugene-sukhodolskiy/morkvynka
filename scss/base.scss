@@ -14,111 +14,12 @@ a.no-style:focus {
   color: inherit;
 }
 
-.navbar-brand {
-	font-family: "DXLBaB", sans-serif;
-  font-size: 1.7em;
-  font-weight: 400;
-  padding-left: 85px;
-  position: relative;
-	
-	.logo-img {
-    height: 34px;
-    top: 7px;
-	  position: absolute;
-	  left: 0px;
-	}
-}
-
-.navbar {
-	.navbar-toggler {
-		border: 0;
-		box-shadow: none !important;
-	}
-
-	.nav-item {
-		&.dropdown {
-			text-align: center;
-		}
-
-		.t {
-			display: none;
-		}
-	}
-}
-
-@media (max-width: 992px) {
-	.navbar-brand {
-    font-size: 1.3em;
-    padding-left: 64px;
-
-    .logo-img {
-			height: 26px;
-    	top: 7px;    	
-    }
-	}
-
-	#wp-admin-bar-my-account {
-		display: none;
-	}
-
-	.navbar {
-		.navbar-nav {
-			align-items: start;
-		}
-
-		.nav-item {
-			&.dropdown {
-				text-align: left;
-				width: 100%;
-
-				.dropdown-menu {
-					width: 100%;
-					display: block;			
-				}
-			}
-
-			.t {
-				display: inline;
-			}
-		}
-	}
-}
-
-.top-navbar {
-	border-bottom: 2px solid rgb(251 154 0 / 25%);
-
-	.navbar-nav {
-		.nav-link {
-			transition-duration: .15s;
-			transition-property: color; 
-
-			display: inline-flex;
-	    align-items: center;
-	    gap: 5px;
-			
-			&:hover {
-				color: #fdab24;
-			}
-		}
-	}
-}
-
 .page-title {
 	margin-bottom: 18px;
 }
 
 .paginator {
 	margin-top: 18px;
-}
-
-.navbar-nav {
-	align-items: center;
-
-	a.nav-link {
-		.mdi {
-			font-size: 26px;
-		}
-	}
 }
 
 .content {
