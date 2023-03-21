@@ -1,8 +1,17 @@
-<? require("layout/head.php") ?>
+<?
+	/**
+	 * SHOW PRODUCTS BY ATTR
+	 */
+	$query_args = array(
+   'post_type'      => 'product',
+   'post_status'    => 'publish',
+   'posts_per_page' => get_option('posts_per_page'),
+   'tax_query'      => [[
+      'taxonomy'        => 'pa_age',
+      'field'           => 'name',
+      'terms'           =>  "0+",
+    ]]
+	);
+?>
 
-<div class="container page-container">
-	<h2 class="page-title"><? the_title() ?></h2>
-	
-</div>
-	
-<? require("layout/footer.php") ?>
+<? require("page-products.php") ?>

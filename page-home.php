@@ -2,7 +2,11 @@
 
 <? $post_content = get_the_content() ?>
 <div class="container page-container">
-	<div class="home-block slide"></div>
+	<? if(has_post_thumbnail()): ?>
+		<div class="home-block slide">
+			<img src="<?= get_the_post_thumbnail_url() ?>" alt="<? the_title() ?>" class="slide-img">
+		</div>
+	<? endif ?>
 
 	<? 
 		$categories = get_terms( array(
@@ -11,6 +15,7 @@
 		));
 	?>
 	<? foreach ( $categories as $category ): ?>
+		<? if(strpos($category -> name, "+")) continue; ?>
 		<?
 			$args = array(
 		    'post_type' => 'product',

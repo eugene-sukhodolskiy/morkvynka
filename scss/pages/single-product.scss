@@ -34,4 +34,18 @@
 		font-size: 1.1em;
 		text-decoration: underline;
 	}
+
+	.attr {
+		font-size: 1.1em;
+		
+		.attr-label {
+
+		}
+
+		.attr-val {
+			a {
+				text-decoration: underline;
+			}
+		}
+	}
 }

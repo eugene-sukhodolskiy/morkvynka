@@ -69,6 +69,26 @@
 					</div>
 				<? endif ?>
 
+				<? $attrs = get_product_attrs($product); ?>
+				<? if($attrs and count($attrs)): ?>
+					<div class="attributes">
+						<? foreach ($attrs as $attr): ?>
+							<div class="attr">
+								<span class="attr-label"><?= $attr["label"] ?>:</span>
+								<? foreach ($attr["value"] as $val): ?>
+									<span class="attr-val">
+										<? if(isset($val["url"])): ?>
+											<a href="<?= $val["url"] ?>" class="no-style"><?= $val["value"] ?></a>
+										<? else: ?>
+											<?= $val["value"] ?>
+										<? endif ?>
+									</span>
+								<? endforeach ?>
+							</div>
+						<? endforeach ?>
+					</div>
+				<? endif ?>
+
 				<div class="product-price-group">
 					<div class="price">
 						<span class="cost"><?= $product -> get_price() ?></span>
