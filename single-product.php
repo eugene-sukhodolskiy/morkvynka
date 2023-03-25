@@ -117,9 +117,21 @@
 			</div>
 		</div>
 	</div>
-	<div class="row">
-
-	</div>
+	<? $related_products = wc_get_related_products($product -> get_id(), $limit = 3, array()); ?>
+	<? if(count($related_products)): ?>
+		<div class="row">
+			<div class="related">
+				<h3 class="section-title">Схожі товари</h3>
+				<?
+					$query_args = [
+						"post_type" => "product",
+						"post__in" => $related_products
+					];
+					include "layout/product-list.php";
+				?>
+			</div>
+		</div>
+	<? endif ?>
 </div>
 	
 <? require("layout/footer.php") ?>
