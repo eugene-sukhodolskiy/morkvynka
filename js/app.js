@@ -52,6 +52,7 @@ document.addEventListener("DOMContentLoaded", e => {
       	const cart_item_key = cont.querySelector("a[data-cart_item_key]").getAttribute("data-cart_item_key");
       	jQuery(btn).attr("data-cart_item_key", cart_item_key);
         console.log(`${product_id} was added to cart`)
+        cart_btn_control();
       },
       error: function(error) {
   			if(btn.classList.contains("already")){
@@ -64,4 +65,40 @@ document.addEventListener("DOMContentLoaded", e => {
     });
 	});
 
+	refreshCartBtnByRemoveBtn();
+	cart_btn_control();
 });
+
+function refreshCartBtnByRemoveBtn() {
+	document.querySelectorAll(".product-remove .remove").forEach(i => i.addEventListener(
+		"click", 
+		e => setTimeout(() => {
+			refreshCartBtnByRemoveBtn();
+			cart_btn_control();
+		}, 2000)
+	))
+}
+
+function cart_btn_control() {
+	jQuery.ajax({
+    type: 'POST',
+    url: '/wp-admin/admin-ajax.php',
+    data: {
+      action: 'get_cart_contents'
+    },
+    success: function (data) {
+    	data = JSON.parse(data);
+    	const total = typeof data == "object" ? Object.keys(data).length : 0;
+    	const cartBtn = document.querySelector(".go-cart-btn");
+    	if(total) {
+				cartBtn.querySelector(".counter").innerHTML = total > 9 ? "9+" : total;
+				cartBtn.classList.add("show");
+    	} else {
+				cartBtn.classList.remove("show");
+    	}
+    },
+    error: function (error) {
+      console.log(error);
+    }
+	});
+}

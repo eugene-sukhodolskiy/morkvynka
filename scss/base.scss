@@ -4,14 +4,14 @@
 }
 
 :root {
-  --bs-primary: #fdab24;
+	--bs-primary: #fdab24;
 }
 
 a.no-style,
 a.no-style:visited,
 a.no-style:focus {
-  text-decoration: none;
-  color: inherit;
+	text-decoration: none;
+	color: inherit;
 }
 
 .page-title {
@@ -58,5 +58,51 @@ a.no-style:focus {
 		.already-state {
 			display: inline-block;
 		}		
+	}
+}
+
+.go-cart-btn {
+	position: fixed;
+	bottom: 40px;
+	right: 30px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	background: white;
+	color: #fdab24;
+	border-radius: 100%;
+	width: 60px;
+	height: 60px;
+	font-size: 30px;
+	box-shadow: 0 0 4px 5px rgba(0, 0, 0, .05);
+	visibility: hidden;
+	opacity: 0;
+	z-index: 99;
+	transition-duration: .2s;
+	transition-property: visibility, opacity, box-shadow;
+
+	&:hover {
+		color: #fdab24;
+		box-shadow: 0 0 8px 6px rgba(0, 0, 0, .08);
+	}
+
+	.counter {
+		border-radius: 100%;
+		position: absolute;
+		font-size: 16px;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		background-color: #fdab24;
+		color: white;
+		width: 26px;
+		height: 26px;
+		right: -6px;
+		top: -6px;
+	}
+
+	&.show {
+		opacity: 1;
+		visibility: visible;
 	}
 }

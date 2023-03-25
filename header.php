@@ -29,3 +29,8 @@
 		?>
 	</div>
 </nav>
+
+<a href="/cart/" class="go-cart-btn">
+	<span class="mdi mdi-cart-variant"></span>
+	<span class="counter">0</span>
+</a>
